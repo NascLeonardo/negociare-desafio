@@ -21,9 +21,9 @@ const EmployeesPage: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectOrderBy, setSelectOrderBy] = useState("");
   const [searchInput, setSearchInput] = useState("");
-  const [nextPage, setNextPage] = React.useState<Number | null>(null);
-  const [previousPage, setPreviousPage] = React.useState<Number | null>(null);
-  const [amountPage, setAmountPage] = React.useState<Number | null>(null);
+  const [nextPage, setNextPage] = React.useState<number>(0);
+  const [previousPage, setPreviousPage] = React.useState<number>(0);
+  const [amountPage, setAmountPage] = React.useState<number>(0);
   const [employee, setEmployee] = React.useState<Employee | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
@@ -44,13 +44,13 @@ const EmployeesPage: React.FC = () => {
       if (data.total_pages > page) {
         setNextPage(page + 1);
       } else {
-        setNextPage(null);
+        setNextPage(0);
       }
 
       if (page > 1) {
         setPreviousPage(page - 1);
       } else {
-        setPreviousPage(null);
+        setPreviousPage(0);
       }
 
       setAmountPage(data.total_pages);
