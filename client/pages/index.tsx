@@ -92,7 +92,7 @@ const EmployeesPage: React.FC = () => {
 
       // Atualiza o alert
       if (response) {
-        fetchEmployees(); // Refaz a tabela
+        await loadEmployees(); // Refaz a tabela
         setAlertMessage("Funcionário salvo com sucesso!");
         setAlertType("success");
       } else {
