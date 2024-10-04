@@ -9,7 +9,7 @@
 Na pasta da API, através de um terminal, execute os seguintes comandos:
 
 ```bash
-cp .env.example .env && composer install && php artisan migrate && php artisan serve
+cp .env.example .env && composer install && php artisan migrate && php artisan key:generate && php artisan serve --port=8000
 ```
 
 ## Client
